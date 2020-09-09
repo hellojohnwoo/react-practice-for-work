@@ -8,4 +8,8 @@
 #### 4. Showボタンを押すと、選択した結果がjson形式でconsoleに出力する。
 #### `PS. useCallback, memoなどを利用して最適化にも気を配ってください。`
 
-![0909_clothes_01](https://user-images.githubusercontent.com/49154920/92571243-d71d8c00-f2bd-11ea-94cd-9cde8a0c384c.PNG)
+![0909_clothes_02](https://user-images.githubusercontent.com/49154920/92607627-4f507580-f2ef-11ea-901b-ffca44965992.PNG)
+![0909_clothes_03](https://user-images.githubusercontent.com/49154920/92607630-5081a280-f2ef-11ea-80f1-9de1a64c50dc.PNG)
+![0909_clothes_04](https://user-images.githubusercontent.com/49154920/92607631-5081a280-f2ef-11ea-83de-b2433e3ce98c.PNG)
+![0909_clothes_05](https://user-images.githubusercontent.com/49154920/92607633-5081a280-f2ef-11ea-9d7e-2151954974cf.PNG)
+![0909_clothes_06](https://user-images.githubusercontent.com/49154920/92607635-511a3900-f2ef-11ea-9e0d-13ee215dc758.PNG)
