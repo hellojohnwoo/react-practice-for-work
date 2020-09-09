@@ -6,15 +6,22 @@ const Checkbox = ({ data, onChange, values = [] }) => {
 	const onChangeAll = useCallback((e) => {
 		const { checked } = e.target;
 		if (checked) {
-			onChange(data.options.map((d) => d.value));
+			onChange(data.options.map((d) => d.value).sort());
 		} else {
 			onChange([]);
 		}
 	}, [data, onChange]);
 
 	const onChangeValue = useCallback((e) => {
-		onChange(e.target.value);
-	}, [onChange]);
+		const { checked } = e.target;
+		if (checked) {
+			const newValues = values.concat(e.target.value).sort();
+			onChange(newValues);
+		} else {
+			const newValues = values.filter((v) => v !== e.target.value);
+			onChange(newValues);
+		}
+	}, [onChange, values]);
 
 	return (
 		<div>
@@ -25,7 +32,7 @@ const Checkbox = ({ data, onChange, values = [] }) => {
 					type="checkbox"
 					name="all"
 					value="all"
-					checked={values}
+					checked={values.join() === data.options.map((d) => d.value).sort().join()}
 					onChange={onChangeAll}
 				/>
 			</label>

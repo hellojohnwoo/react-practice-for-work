@@ -84,6 +84,7 @@ const data = [
   },
 ];
 
+// export default function App() {...};
 function App() {
   console.log("App Render");
   const [result, setResult] = useState({});
