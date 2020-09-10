@@ -89,10 +89,26 @@ function App() {
   console.log("App Render");
   const [result, setResult] = useState({});
 
+  const requiredList = ["season", "texture", "thickness", "message"];
+
+
   const onSubmit = useCallback((e) => {
     e.preventDefault();
-    console.log(result)
-  }, [result]);
+
+    const missingList =  requiredList.reduce((a, c) => {
+      if (!result[c]?.value && !result[c]?.values?.length) {
+        a.push(c);
+      }
+      return a;
+    }, []);
+    if (missingList.length) {
+      alert(missingList
+        .map((m) => data.find((v) => v.id === m).label)
+        .join(", ") + " 入力してください");
+    } else {
+      console.log(result);
+    }
+  }, [result, requiredList]);
 
   const onChangeValues = useCallback((id) => (values) => {
     setResult((prevResult) => {
@@ -119,34 +135,36 @@ function App() {
   return (
     <div className="App">
       <form onSubmit={onSubmit}>
-        {data.filter((v) => ["message", "texture", "season"].includes(v.id)).map((v) => {
-          if (v.type === "checkbox") {
-            return (
-              <Checkbox 
-                data={v}
-                values={result[v.id]?.values}
-                onChange={onChangeValues(v.id)}
-              />
-            );
-          } else if (v.type === "radio") {
-            return (
-              <Radio                 
-                data={v}
-                value={result[v.id]?.value}
-                onChange={onChangeValue(v.id)}
-              />
-            );
-          } else if (v.type === "input") {
-            return (
-              <Input 
-                data={v}
-                value={result[v.id]?.value}
-                onChange={onChangeValue(v.id)} 
-              />
-            );
-          } else {
-            return null;
-          }
+        {requiredList
+          .map((id) => {
+            const v = data.find((v) => v.id === id);
+            if (v.type === "checkbox") {
+              return (
+                <Checkbox 
+                  data={v}
+                  values={result[v.id]?.values}
+                  onChange={onChangeValues(v.id)}
+                />
+              );
+            } else if (v.type === "radio") {
+              return (
+                <Radio                 
+                  data={v}
+                  value={result[v.id]?.value}
+                  onChange={onChangeValue(v.id)}
+                />
+              );
+            } else if (v.type === "input") {
+              return (
+                <Input 
+                  data={v}
+                  value={result[v.id]?.value}
+                  onChange={onChangeValue(v.id)} 
+                />
+              );
+            } else {
+              return null;
+            }
         })}
         <button type="submit">Show</button>
       </form>
