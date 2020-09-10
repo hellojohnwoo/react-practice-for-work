@@ -9,7 +9,8 @@
 #### `PS. useCallback, memoなどを利用して最適化にも気を配りました。`
 
 ##
-## `--- 0910 Commit ---`
+## `--- 0910 Commit ---` 
+#### `0910 Checkbox function fixed, additional RadioButton can be used Without HardCoding, Alert function`
 ![0910_clothes_07](https://user-images.githubusercontent.com/49154920/92700257-92f7bd80-f389-11ea-807a-d34680280424.PNG)
 ![0910_clothes_08](https://user-images.githubusercontent.com/49154920/92700258-92f7bd80-f389-11ea-918b-87da037d9d29.PNG)
 ![0910_clothes_09](https://user-images.githubusercontent.com/49154920/92700254-91c69080-f389-11ea-87d2-d52e3ceb10cb.PNG)
