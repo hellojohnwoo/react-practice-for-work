@@ -13,7 +13,7 @@
 			endId: 91,
 			requestAtATime: 10,
 			waitingSeconds: 2,
-		})
+		});
 		
 		const baseUrl = 'https://jsonplaceholder.typicode.com/todos/';
 		
@@ -25,6 +25,13 @@
 			});
 		}
 
+		const fetch = async({ startId, endId }) => {
+			const range = Array(endId - startId + 1).fill().map((v, i) => startId + i);
+			console.log(range);
+			const result = await Promise.allSettled(range.map((v) => axios.get(baseUrl + v)))
+			console.log(result);
+		};
+		
 		const fetchDataAndWaiting = async ({ startId, endId, requestAtATime, waitingSeconds }) => {
 			let completed = [];
 			for (let i = 1; i <= Math.ceil((endId - requestAtATime + 1) / requestAtATime); i += 1) {
@@ -37,7 +44,7 @@
 				await waiting(waitingSeconds * 1000);
 			}
 			console.log(completed);
-		}
+		};
 	</script>
 </body>
 </html>

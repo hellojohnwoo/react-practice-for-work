@@ -33,14 +33,14 @@
 
 
 ##
-## `--- 0910 Commit ---` 
+## `--- 0910 Commit : about Q1 ---` 
 #### `0910 Checkbox function fixed, additional RadioButton can be used Without HardCoding, Alert function`
 ![0910_clothes_07](https://user-images.githubusercontent.com/49154920/92700257-92f7bd80-f389-11ea-807a-d34680280424.PNG)
 ![0910_clothes_08](https://user-images.githubusercontent.com/49154920/92700258-92f7bd80-f389-11ea-918b-87da037d9d29.PNG)
 ![0910_clothes_09](https://user-images.githubusercontent.com/49154920/92700254-91c69080-f389-11ea-87d2-d52e3ceb10cb.PNG)
 
 
-## `--- 0909 Commit ---`
+## `--- 0909 Commit : about Q1  ---`
 ![0909_clothes_02](https://user-images.githubusercontent.com/49154920/92607627-4f507580-f2ef-11ea-901b-ffca44965992.PNG)
 ![0909_clothes_03](https://user-images.githubusercontent.com/49154920/92607630-5081a280-f2ef-11ea-80f1-9de1a64c50dc.PNG)
 ![0909_clothes_04](https://user-images.githubusercontent.com/49154920/92607631-5081a280-f2ef-11ea-83de-b2433e3ce98c.PNG)
