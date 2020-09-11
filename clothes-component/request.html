@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Request, Coding Test Problem</title>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+	<script>
+		fetchData({
+			startId: 3,
+			endId: 91,
+			requestAtATime: 10,
+			waitingSeconds: 2,
+		})
+		
+		const baseUrl = 'https://jsonplaceholder.typicode.com/todos/';
+		
+		const waiting = async (desiredSeconds) => {
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve();
+				}, desiredSeconds);
+			});
+		}
+
+		const fetchDataAndWaiting = async ({ startId, endId, requestAtATime, waitingSeconds }) => {
+			let completed = [];
+			for (let i = 1; i <= Math.ceil((endId - requestAtATime + 1) / requestAtATime); i += 1) {
+				completed = completed.concat(
+					await fetch({
+						startId: (i - 1) * requestAtATime + 1,
+						endId: Math.min(startId + i * requestAtATime - 1, endId)
+					})
+				);
+				await waiting(waitingSeconds * 1000);
+			}
+			console.log(completed);
+		}
+	</script>
+</body>
+</html>
